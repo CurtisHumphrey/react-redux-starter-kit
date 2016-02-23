@@ -13,6 +13,7 @@ export default function createDevToolsWindow (store) {
   // reload in case it's reusing the same window with the old content
   win.location.reload()
 
+  const timeout_time = 10 // ms
   // wait a little bit for it to reload, then render
   setTimeout(() => {
     // Wait for the reload to prevent:
@@ -26,5 +27,5 @@ export default function createDevToolsWindow (store) {
       </Provider>
       , win.document.getElementById('react-devtools-root')
     )
-  }, 10)
+  }, timeout_time)
 }

@@ -20,7 +20,10 @@ function shallowRenderWithProps (props = {}) {
 }
 
 describe('(View) Home', function () {
-  let _component, _rendered, _props, _spies
+  let _component
+  let _rendered
+  let _props
+  let _spies
 
   beforeEach(function () {
     _spies = {}
@@ -28,8 +31,9 @@ describe('(View) Home', function () {
       counter: 0,
       ...bindActionCreators({
         doubleAsync: (_spies.doubleAsync = sinon.spy()),
-        increment: (_spies.increment = sinon.spy())
-      }, _spies.dispatch = sinon.spy())
+        increment: (_spies.increment = sinon.spy()),
+      },
+      _spies.dispatch = sinon.spy()),
     }
 
     _component = shallowRenderWithProps(_props)
@@ -56,7 +60,8 @@ describe('(View) Home', function () {
 
   it('Should render props.counter at the end of the sample counter <h2>.', function () {
     const h2 = TestUtils.findRenderedDOMComponentWithTag(
-      renderWithProps({ ..._props, counter: 5 }), 'h2'
+      renderWithProps({ ..._props, counter: 5 }),
+      'h2'
     )
 
     expect(h2).to.exist
@@ -74,7 +79,7 @@ describe('(View) Home', function () {
 
     beforeEach(() => {
       _btn = TestUtils.scryRenderedDOMComponentsWithTag(_rendered, 'button')
-        .filter(a => /Increment/.test(a.textContent))[0]
+        .filter((a) => /Increment/.test(a.textContent))[0]
     })
 
     it('should be rendered.', function () {
@@ -93,7 +98,7 @@ describe('(View) Home', function () {
 
     beforeEach(() => {
       _btn = TestUtils.scryRenderedDOMComponentsWithTag(_rendered, 'button')
-        .filter(a => /Double/.test(a.textContent))[0]
+        .filter((a) => /Double/.test(a.textContent))[0]
     })
 
     it('should be rendered.', function () {

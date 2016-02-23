@@ -4,5 +4,5 @@ import counter from './modules/counter'
 
 export default combineReducers({
   counter,
-  router
+  router,
 })

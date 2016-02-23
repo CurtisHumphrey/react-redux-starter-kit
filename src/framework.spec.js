@@ -23,12 +23,12 @@ describe('(Framework) Karma Plugins', function () {
   })
 
   it('Should have chai-as-promised helpers.', function () {
-    const pass = new Promise(res => res('test'))
-    const fail = new Promise((res, rej) => rej())
+    const pass = new Promise((resolve) => resolve('test'))
+    const fail = new Promise((resolve, reject) => reject())
 
     return Promise.all([
       expect(pass).to.be.fulfilled,
-      expect(fail).to.not.be.fulfilled
+      expect(fail).to.not.be.fulfilled,
     ])
   })
 

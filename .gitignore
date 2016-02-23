@@ -5,3 +5,19 @@ node_modules
 
 dist
 coverage
+
+.tmp
+.sass-cache
+bower_components
+.idea/
+temp/
+npm-debug.log
+embed_test.html
+embed_test.css
+npm-debug.log*
+test-results.xml
+test.html
+app/scripts/envconfig.js
+*.orig
+/.project
+*.sublime-*

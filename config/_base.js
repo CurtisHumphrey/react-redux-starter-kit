@@ -14,7 +14,8 @@ const config = {
   dir_client : 'src',
   dir_dist   : 'dist',
   dir_server : 'server',
-  dir_test   : 'tests',
+  dir_test   : 'src',
+  dir_test_tool : 'tests',
 
   // ----------------------------------
   // Server Configuration
@@ -48,10 +49,10 @@ const config = {
   // ----------------------------------
   // Test Configuration
   // ----------------------------------
-  coverage_enabled   : !argv.watch,
+  coverage_enabled   : true,
   coverage_reporters : [
     { type : 'text-summary' },
-    { type : 'lcov', dir : 'coverage' }
+    { type : 'lcov', dir : 'coverage', subdir: '.' }
   ]
 }
 
@@ -95,6 +96,7 @@ config.compiler_vendor = config.compiler_vendor
       `it won't be included in the webpack vendor bundle.
        Consider removing it from vendor_dependencies in ~/config/index.js`
     )
+    return false
   })
 
 // ------------------------------------

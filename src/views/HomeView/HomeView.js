@@ -15,7 +15,7 @@ import classes from './HomeView.scss'
 type Props = {
   counter: number,
   doubleAsync: Function,
-  increment: Function
+  increment: Function,
 };
 
 // We avoid using the `@connect` decorator on the class definition so
@@ -25,7 +25,7 @@ export class HomeView extends React.Component<void, Props, void> {
   static propTypes = {
     counter: PropTypes.number.isRequired,
     doubleAsync: PropTypes.func.isRequired,
-    increment: PropTypes.func.isRequired
+    increment: PropTypes.func.isRequired,
   };
 
   render () {
@@ -57,9 +57,9 @@ export class HomeView extends React.Component<void, Props, void> {
 }
 
 const mapStateToProps = (state) => ({
-  counter: state.counter
+  counter: state.counter,
 })
 export default connect((mapStateToProps), {
   increment: () => increment(1),
-  doubleAsync
+  doubleAsync,
 })(HomeView)

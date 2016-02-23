@@ -18,7 +18,7 @@ const app = new Koa()
 // (ignoring file requests). If you want to implement isomorphic
 // rendering, you'll want to remove this middleware.
 app.use(convert(historyApiFallback({
-  verbose: false
+  verbose: false,
 })))
 
 // ------------------------------------

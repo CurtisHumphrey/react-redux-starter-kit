@@ -11,17 +11,17 @@ const karmaConfig = {
   files: [
     './node_modules/phantomjs-polyfill/bind-polyfill.js',
     {
-      pattern: `./${config.dir_test}/test-bundler.js`,
+      pattern: `./${config.dir_test_tool}/test-bundler.js`,
       watched: false,
       served: true,
-      included: true
-    }
+      included: true,
+    },
   ],
   singleRun: !argv.watch,
   frameworks: ['mocha'],
   reporters: ['mocha'],
   preprocessors: {
-    [`${config.dir_test}/test-bundler.js`]: ['webpack']
+    [`${config.dir_test_tool}/test-bundler.js`]: ['webpack'],
   },
   browsers: ['PhantomJS'],
   webpack: {
@@ -30,8 +30,8 @@ const karmaConfig = {
       ...webpackConfig.resolve,
       alias: {
         ...webpackConfig.resolve.alias,
-        sinon: 'sinon/pkg/sinon.js'
-      }
+        sinon: 'sinon/pkg/sinon.js',
+      },
     },
     plugins: webpackConfig.plugins,
     module: {

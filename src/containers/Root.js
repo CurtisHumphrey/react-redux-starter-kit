@@ -6,7 +6,7 @@ export default class Root extends React.Component {
   static propTypes = {
     history: PropTypes.object.isRequired,
     routes: PropTypes.element.isRequired,
-    store: PropTypes.object.isRequired
+    store: PropTypes.object.isRequired,
   };
 
   get content () {
@@ -30,6 +30,7 @@ export default class Root extends React.Component {
         return <DevTools />
       }
     }
+    return null
   }
 
   render () {
