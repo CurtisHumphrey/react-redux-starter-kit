@@ -52,7 +52,8 @@ const config = {
   coverage_enabled   : true,
   coverage_reporters : [
     { type : 'text-summary' },
-    { type : 'lcov', dir : 'coverage', subdir: '.' }
+    { type : 'lcov', dir : 'coverage', subdir: '.' },
+    { type : 'html', dir : 'coverage', 'subdir' : 'html' }
   ]
 }
 
