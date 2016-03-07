@@ -12,7 +12,7 @@ const config = {
   // ----------------------------------
   path_base  : path.resolve(__dirname, '..'),
   dir_client : 'src',
-  dir_dist   : 'dist',
+  dir_dist   : 'dist/react',
   dir_server : 'server',
   dir_test   : 'src',
   dir_test_tool : 'tests',
@@ -40,10 +40,17 @@ const config = {
   compiler_vendor : [
     'history',
     'react',
+    'react-ace',
+    'react-css-modules',
+    'react-pure-render',
     'react-redux',
     'react-router',
     'react-router-redux',
-    'redux'
+    'redux',
+    'redux-actions',
+    'redux-thunk',
+    'reselect',
+    'seamless-immutable',
   ],
 
   // ----------------------------------
@@ -52,7 +59,7 @@ const config = {
   coverage_enabled   : true,
   coverage_reporters : [
     { type : 'text-summary' },
-    { type : 'lcov', dir : 'coverage', subdir: '.' },
+    { type : 'lcov', dir : 'coverage' },
     { type : 'html', dir : 'coverage', 'subdir' : 'html' }
   ]
 }

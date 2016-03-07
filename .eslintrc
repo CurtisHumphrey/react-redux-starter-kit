@@ -14,6 +14,7 @@
   "globals" : {
     "__DEV__"      : false,
     "__PROD__"     : false,
+    "__TEST__"     : false,
     "__DEBUG__"    : false,
     "__DEBUG_NEW_WINDOW__" : false,
     "__BASENAME__" : false,
@@ -56,7 +57,15 @@
     "no-native-reassign": 2,
     "no-unexpected-multiline": 2,
     "one-var"          : [2, "never"],
-    "quotes"           : [2, "single"],
+    "quotes"           : [2, "single", "avoid-escape"],
+    "react/jsx-key": 2,
+    "react/jsx-no-bind": 2,
+    "react/no-deprecated": 2,
+    "react/no-did-mount-set-state": 2,
+    "react/no-direct-mutation-state": 2,
+    "react/react-in-jsx-scope": 2,
+    "react/sort-comp": 2,
+    "react/wrap-multilines": 2,
     "space-before-function-paren" : 2
   }
 }

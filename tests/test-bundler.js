@@ -28,7 +28,9 @@ const testsContext = require.context('../src/', true, /\.spec\.js$/)
 
 // only run tests that have changed after the first pass.
 const testsToRun = testsContext.keys().filter(inManifest)
-;(testsToRun.length ? testsToRun : testsContext.keys()).forEach(testsContext)
+// ;(testsToRun.length ? testsToRun : testsContext.keys()).forEach(testsContext)
+
+testsContext.keys().forEach(testsContext)
 
 // require all `src/**/*.js` except for `main.js` and `**specs.js` (for isparta coverage reporting)
 const componentsContext = require.context('../src/', true, /^((?!main|spec).)*\.js$/)

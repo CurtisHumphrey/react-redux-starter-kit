@@ -10,6 +10,7 @@ const karmaConfig = {
   basePath: '../', // project root in relation to bin/karma.js
   files: [
     './node_modules/phantomjs-polyfill/bind-polyfill.js',
+    './node_modules/babel-polyfill/dist/polyfill.js', // need for react-css-modules
     {
       pattern: `./${config.dir_test_tool}/test-bundler.js`,
       watched: false,
@@ -47,6 +48,7 @@ const karmaConfig = {
     },
     externals: {
       ...webpackConfig.externals,
+      // cheerio: 'window',
       'react/lib/ExecutionEnvironment': true,
       'react/lib/ReactContext': 'window',
       'text-encoding': 'window'
@@ -57,8 +59,28 @@ const karmaConfig = {
     noInfo: true
   },
   coverageReporter: {
-    reporters: config.coverage_reporters
-  }
+    reporters: config.coverage_reporters,
+    watermarks: {
+      statements: [ 85, 95 ],
+      functions: [ 85, 95 ],
+      branches: [ 85, 95 ],
+      lines: [ 85, 95 ]
+    },
+    check: {
+      global: {
+        statements: 95,
+        branches: 95,
+        functions: 95,
+        lines: 95,
+      },
+      each: {
+        statements: 90,
+        branches: 90,
+        functions: 90,
+        lines: 90,
+      },
+    },
+  },
 }
 
 if (config.coverage_enabled) {

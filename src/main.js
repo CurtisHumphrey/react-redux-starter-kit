@@ -1,3 +1,5 @@
+import 'babel-polyfill' // need for react-css-modules
+
 import React from 'react'
 import ReactDOM from 'react-dom'
 import createBrowserHistory from 'history/lib/createBrowserHistory'

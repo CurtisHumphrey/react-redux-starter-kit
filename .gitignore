@@ -21,3 +21,4 @@ app/scripts/envconfig.js
 *.orig
 /.project
 *.sublime-*
+.search.md
